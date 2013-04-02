@@ -1,0 +1,23 @@
+PHP
+  Inheritance
+    class A
+    {
+      public function init()
+      {
+        echo "A::init\n";
+      }
+    }
+
+    (new A)->init();
+
+    class B extends A
+    {
+      public function init()
+      {
+        echo "B::init (before)\n";
+        parent::init();
+        echo "B::init (after)\n";
+      }
+    }
+
+    (new B)->init();
